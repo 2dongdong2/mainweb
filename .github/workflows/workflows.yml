@@ -38,9 +38,9 @@ jobs:
       - name: Checkout web repository
         uses: actions/checkout@v3
         with:
-          repository: git@github.com:2dongdong2/web.git # SSH 주소 사용
-          ref: dev-main # dev-main 브랜치 체크아웃
-          path: web-repo # 체크아웃될 경로
+          repository: 'https://github.com/2dongdong2/web' # HTTPS 주소 사용
+          ref: 'dev-main' # dev-main 브랜치 체크아웃
+          path: 'web-repo' # 체크아웃될 경로
 
       - name: Update values.yaml with new image
         run: |
@@ -57,3 +57,4 @@ jobs:
           git push origin dev-main
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub Token
+`
