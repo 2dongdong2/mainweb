@@ -57,6 +57,3 @@ jobs:
           git add web-helm-chart/values.yaml
           git commit -m "Update image to $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
           git push origin dev-main
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }} # GitHub 액세스 토큰
-          GIT_TOKEN: ${{ secrets.TOKEN }} # Git 토큰
