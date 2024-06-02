@@ -45,7 +45,7 @@ jobs:
 
       - name: Update values.yaml with new image
         run: |
-          sed -i "s|image: .*|image: $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG|g" web-repo/web-helm-chart/values.yaml
+          sed -i "s|mainweb: \".*\"|mainweb: \"$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG\"|g" web-repo/web-helm-chart/values.yaml
 
       - name: Commit and push changes
         if: ${{ success() }}
@@ -54,4 +54,4 @@ jobs:
           git config --global user.name '2dongdong2'
           git config --global user.email 'teasun1122@naver.com'
           git add web-helm-chart/values.yaml
-          git diff --quiet --exit-code || git commit -m "Update image to $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" && git push origin dev-main
+          git diff --quiet --exit-code || git commit -m "Update mainweb image URL" && git push origin dev-main
