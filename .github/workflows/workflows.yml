@@ -38,7 +38,7 @@ jobs:
       - name: Checkout web repository
         uses: actions/checkout@v3
         with:
-          repository: 2dongdong2/web
+          repository: https://github.com/2dongdong2/web # 웹 레포지토리 url
           ref: dev-main # dev-main 브랜치 체크아웃
           path: web-repo # 체크아웃될 경로
 
