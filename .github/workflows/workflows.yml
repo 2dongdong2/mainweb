@@ -38,7 +38,7 @@ jobs:
       - name: Checkout web repository
         uses: actions/checkout@v3
         with:
-          repository: your-org/web
+          repository: 2dongdong2/web
           ref: dev-main # dev-main 브랜치 체크아웃
           path: web-repo # 체크아웃될 경로
 
@@ -50,8 +50,8 @@ jobs:
       - name: Commit and push changes
         run: |
           cd web-repo
-          git config --global user.name 'github-actions'
-          git config --global user.email 'github-actions@github.com'
+          git config --global user.name '2dongdong2'
+          git config --global user.email 'teasun1122@naver.com'
           git add web-helm-chart/values.yaml
           git commit -m "Update image to $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
           git push origin dev-main
