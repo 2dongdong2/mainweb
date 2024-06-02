@@ -38,7 +38,7 @@ jobs:
       - name: Checkout web repository
         uses: actions/checkout@v3
         with:
-          repository: 'https://github.com/2dongdong2/web' # HTTPS 주소 사용
+          repository: '2dongdong2/web' # 웹 리포지토리의 {owner}/{repo}
           ref: 'dev-main' # dev-main 브랜치 체크아웃
           path: 'web-repo' # 체크아웃될 경로
 
