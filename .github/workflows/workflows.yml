@@ -38,9 +38,9 @@ jobs:
       - name: Checkout web repository
         uses: actions/checkout@v3
         with:
-          repository: https://github.com/2dongdong2/web # 웹 레포지토리 url
-          ref: dev-main # dev-main 브랜치 체크아웃
-          path: web-repo # 체크아웃될 경로
+          repository: '2dongdong2/web' # 웹 리포지토리의 {owner}/{repo}
+          ref: 'dev-main' # dev-main 브랜치 체크아웃
+          path: 'web-repo' # 체크아웃될 경로
 
       - name: Update values.yaml with new image
         run: |
@@ -56,4 +56,4 @@ jobs:
           git commit -m "Update image to $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
           git push origin dev-main
         env:
-          GITHUB_TOKEN: ${{ secrets.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 }} # GitHub Token
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub Token
